@@ -358,6 +358,10 @@ a:hover {color: #65b8f9} /* mouse over link */
 	color: #fff;  
 }
 
+/* ADDRESSES */
+.address p {
+	margin: 4px 0px 4px 0px;
+}
 
 /* FORMS */
 
