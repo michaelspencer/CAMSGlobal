@@ -1,0 +1,13 @@
+<div id="primary_navigation" class="menu">
+	<ul>
+		<ul>
+			<li <% if active == "homewho" %>class="active"<% end %> ><%= link_to "Who We Are", homewho_path %></li>
+			<li <% if active == "homewhat" %>class="active"<% end %> ><%= link_to "What We Do", homewhat_path %></li>
+			<li <% if active == "homewhere" %>class="active"<% end %> ><%= link_to "Where We Are", homewhere_path %></li>
+			<li <% if active == "homenews" %>class="active"<% end %> ><%= link_to "News", homenews_path %></li>
+		</ul>
+	</ul>
+</div> <!-- ends primary navigation -->
+
+
+

@@ -1,0 +1,65 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<!-- banner image -->
+<img id="primary_navigation_image" src="/images/banner_whatwedo.jpg" alt="" />
+
+<!-- primary navigation -->
+<%= render :partial => "shared/primarynav", :locals => { :active => "homewhat" } %> 
+
+<div id="left_menu_navigation">
+	<ul>
+
+		<li <% if params[:industry] == 'operations' %>		class="active"<% end %> > <%= link_to "Operations", 		homewhat_path + "/operations" %></li>
+		<li <% if params[:industry] == 'powergeneration' %>	class="active"<% end %> > <%= link_to "Power Generation", 	homewhat_path + "/powergeneration" %></li>
+		<li <% if params[:industry] == 'infrastructure' %>	class="active"<% end %> > <%= link_to "Infrastructure", 	homewhat_path + "/infrastructure" %></li>
+		<li <% if params[:industry] == 'renewableenergy' %>	class="active"<% end %> > <%= link_to "Renewable Energy", 	homewhat_path + "/renewableenergy" %></li>
+		<li <% if params[:industry] == 'agriculture' %>		class="active"<% end %> > <%= link_to "Agriculture", 		homewhat_path + "/agriculture" %></li>
+		<li <% if params[:industry] == 'oil and gas' %>		class="active"<% end %> > <%= link_to "Oil and Gas", 		homewhat_path + "/oilgas" %></li>
+		<li <% if params[:industry] == 'construction' %>	class="active"<% end %> > <%= link_to "Construction", 		homewhat_path + "/construction" %></li>
+		<li <% if params[:industry] == 'telecom' %>			class="active"<% end %> > <%= link_to "Telecom", 			homewhat_path + "/telecommunications" %></li>
+		<li <% if params[:industry] == 'automation' %>		class="active"<% end %> > <%= link_to "Automation", 		homewhat_path + "/automation" %></li>
+		<li <% if params[:industry] == 'airports' %>		class="active"<% end %> > <%= link_to "Airports", 			homewhat_path + "/airports" %></li>
+		<li <% if params[:industry] == 'transportation' %>	class="active"<% end %> > <%= link_to "Transportation", 	homewhat_path + "/transportation" %></li>
+		<li <% if params[:industry] == 'healthservices' %>	class="active"<% end %> > <%= link_to "Health Services", 	homewhat_path + "/health" %></li>
+		<li <% if params[:industry] == 'finance' %>			class="active"<% end %> > <%= link_to "Finance", 			homewhat_path + "/finance" %></li>
+
+	</ul>
+	
+</div> <!-- ends left_menu_navigation -->
+
+<!-- if a industry is selected then format the content area for multi-row display else single-row display for overview page -->
+<% if params[:industry] == nil %>
+	<div id="left_menu_content">
+<% else %>
+	<div id="left_menu_rows">
+<% end %>
+
+<!-- if a industry is selected then display a row for each project post in that industry else display the overview page -->
+<% @posts.each do |post| %>
+
+	<% if params[:industry] == nil %>
+		<div class="text">
+
+				<p><%= post.content %></p>
+		</div>
+	<% else %>
+		<div class="text left_menu_row <%= cycle("rows_odd", "rows_even") %>">
+				<h2><%= post.title %></h2><p>
+
+					<!-- display image file for the post if one exists 
+								<% if post.image_filename != nil %>
+									<% post_image_full_path = "/images/posts/" << post.image_filename %>
+									<%= image_tag(post_image_full_path, :alt => "") %>
+								<% end %>
+					-->
+				
+				<%= post.content %></p>
+		</div>
+	<% end %>
+
+<% end %>
+
+</div> <!-- ends left_menu_content -->

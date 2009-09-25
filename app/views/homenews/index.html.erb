@@ -1,0 +1,29 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<!-- banner image -->
+<img id="primary_navigation_image" src="/images/banner_news.jpg" alt="" />
+
+<!-- primary navigation -->
+<%= render :partial => "shared/primarynav", :locals => { :active => "homenews" } %> 
+
+<% @posts.each do |post| %>
+
+	<div class="text row <%= cycle("rows_odd", "rows_even") %>">
+		<h2><%= post.title %></h2><p>
+
+<!-- display image file for the post if one exists 
+			<% if post.image_filename != nil %>
+				<% post_image_full_path = "/images/posts/" << post.image_filename %>
+				<%= image_tag(post_image_full_path, :alt => "") %>
+			<% end %>
+-->
+				
+			<%= post.content %></p>
+
+	</div><!-- ends text row -->
+
+<% end %>
+

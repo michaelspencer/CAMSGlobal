@@ -1,0 +1,52 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<!-- banner image -->
+<img id="primary_navigation_image" src="/images/banner_whereweare.jpg" alt="" />
+
+<!-- primary navigation -->
+<%= render :partial => "shared/primarynav", :locals => { :active => "homewhere" } %> 
+
+<div id="left_menu_navigation">
+	<ul>
+		<li <% if params[:continent] == 'europe' %>		class="active"<% end %> ><%= link_to "Europe", 			homewhere_path + "/europe" %></li>
+		<li <% if params[:continent] == 'middleeast' %>	class="active"<% end %> ><%= link_to "The Middle East", homewhere_path + "/middleeast" %></li>
+		<li <% if params[:continent] == 'africa' %>		class="active"<% end %> ><%= link_to "Africa",	 		homewhere_path + "/africa" %></li>
+		<li <% if params[:continent] == 'asia' %>		class="active"<% end %> ><%= link_to "Asia", 			homewhere_path + "/asia" %></li> 
+	</ul>
+</div> <!-- ends left_menu_navigation -->
+
+<!-- if a continent is selected then format the content area for multi-row display else single-row display -->
+<% if params[:continent] == nil %>
+	<div id="left_menu_content">
+<% else %>
+	<div id="left_menu_rows">
+<% end %>
+
+<!-- if a continent is selected then display a row for each project post in that continent -->
+<% @posts.each do |post| %>
+
+	<% if params[:continent] == nil %>
+		<div class="text">
+				<p><%= post.content %></p>
+		</div>
+	<% else %>
+		<div class="text left_menu_row <%= cycle("rows_odd", "rows_even") %>">
+				<h2><%= post.title %></h2><p>
+
+					<!-- display image file for the post if one exists 
+								<% if post.image_filename != nil %>
+									<% post_image_full_path = "/images/posts/" << post.image_filename %>
+									<%= image_tag(post_image_full_path, :alt => "") %>
+								<% end %>
+					-->
+				
+				<%= post.content %></p>
+		</div>
+	<% end %>
+
+<% end %>
+
+</div> <!-- ends left_menu_content -->

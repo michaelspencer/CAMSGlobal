@@ -1,0 +1,505 @@
+@import url(/stylesheets/reset.css) screen;
+
+body {
+	position: relative;
+	background: #383d43 url(../images/header_bar.jpg) repeat-x;
+	color: #000;
+	font: 62.5% Myriad Pro, Arial, sans-serif;
+}
+
+#wrapper {
+	width: 960px;
+	padding: 0px;
+	margin: 0px auto;
+}
+
+/* LINKS */
+
+a {text-decoration: none}
+a:link {color: white} /* unvisited link */
+a:visited {color: white} /* visited link */
+a:hover {color: #65b8f9} /* mouse over link */
+/*a:active {color: #000000} /* selected link */
+
+/* SITE HEADER AND SECONDARY NAVIGATION */
+
+#header {
+	width: 896px;
+	height: 65px;
+	font-size: 16px;
+	padding: 24px 32px 0px 32px;
+}
+
+#header p {
+	float: left;
+	color: #525961;
+}
+
+#header span {
+	color: #bababa;
+}
+
+#header ul {
+	float: right;
+}
+
+#header ul li {
+	float: left;
+	margin: 0px 0px 0px 12px;
+	padding: 0px 0px 0px 12px;
+	background: url(../images/header_navi_bg.gif) left center no-repeat;
+}
+
+#header ul li.no_bg {
+	background: none;
+}
+
+#header ul li a {
+	color:#fff;
+	text-decoration: none;
+}
+
+/* COMPANY LOGO AND PAGE TITLE */
+
+#logo {
+	width: 250px;
+	height: 71px;
+	float: left;
+	margin: 0px 0px 0px 32px;
+	background: url(../images/logo.jpg) no-repeat;
+	text-indent: -9999px;
+}
+
+#banner img {
+	width: 958px;
+	border: 1px solid #43474b;
+}
+
+#page_title {
+	float: left;
+	width: 896px;
+	padding: 32px 32px 32px 32px;
+	font-family: Helvetica, Arial;  
+	font-size: 24px; 
+	color: #bcc4c7;
+	background: #2f3338;
+}
+
+/* SITE SEARCH FORM */
+
+#search_form{
+	float: right;
+	margin: 10px 0px;
+}
+	
+#search_input{
+	width: 171px;
+	height: 17px;
+	float: left;
+	padding: 7px 10px;
+	color: #a0a4a8;
+	border: none;
+	font-size: 14px;
+}
+
+#search_input_submit{
+	display: inline;
+	border: none;
+	width: 96px;
+	height: 32px;
+	float: left;
+	margin: 0px 32px 0px 10px;
+	background: url(../images/btn_search.gif) no-repeat;
+}
+
+/* PRIMARY NAVIGATION */
+
+#primary_navigation_image {
+	width: 958px;
+	border-left: 1px solid #43474b;  
+	border-right: 1px solid #43474b;
+	float: left;
+}
+
+#primary_navigation {
+	width: 894px;
+	height: 40px;
+	float: left;
+	padding: 12px 32px;
+	border-left: 1px solid #43474b;  
+	border-right: 1px solid #43474b;
+	background: url(../images/primary_nav_bg.jpg) repeat-x;
+}
+
+#primary_navigation ul li {
+	float: left;
+	height: 41px;
+}
+
+#primary_navigation ul li a {
+	display: inline-block;
+	color: #cbd9e7;
+	height: 29px;
+	font-size: 14px;
+	padding: 12px 24px 0px 24px;
+	margin: 0px 0px 0px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#primary_navigation ul li a:hover {
+	text-decoration: none;
+	background: url(../images/btn_primary_nav.gif) repeat-x;
+}
+
+#primary_navigation ul li.active a {
+	background: url(../images/btn_primary_nav.gif) repeat-x;
+}
+
+/* PAGE CONTENT */
+
+/* page content without a left menu (e.g. homewho )*/
+#content {
+	float: left;  
+	width: 896px;
+	padding: 32px 32px;
+	background: #2f3338;
+}
+
+/* page content without a left menu and without a top margin (e.g. the posts index page)*/
+#content_notopmargin {
+	float: left;  
+	width: 896px;
+	padding: 0px 32px 32px 32px;
+	background: #2f3338;
+}
+
+/* SIMPLE TABLE-BASED LISTS (e.g. the posts index page) */
+
+.list {
+	float: left;
+}
+
+.list_header{
+	text-align: left;
+}
+
+/* actions above the list such as "create a new page" */
+#list_header_action{
+	width: 896px;
+	text-align: right;
+}
+
+#list_column_pagetype{
+	width: 200px;
+}
+
+#list_column_pagetitle{
+	width: 300px;
+}
+
+#list_column_actions{
+	width: 400px;
+	vertical-align: middle;
+}
+
+#list_column_actions ul{
+	float: right;	
+	padding: 0px 0px 0px 0px;
+}
+
+#list_column_actions ul li {
+	float: left;
+	margin: 0px 0px 0px 12px;
+	padding: 0px 0px 0px 12px;
+	list-style-type: none;
+	background: url(../images/header_navi_bg.gif) left center no-repeat;
+}
+
+#list_column_actions ul li.no_bg {
+	background: none;
+}
+
+/* banded rows */
+.row{
+    float: left; 
+	width: 896px;
+	padding: 32px 32px;	
+}
+
+.rows_even{
+	background: #2a2d32; 
+}
+
+.rows_odd{
+	background: #2f3338;
+	border-top: 1px solid #26292e;  
+	border-bottom: 1px solid #26292e;
+}
+
+/* PAGE CONTENT WITH LEFT MENU NAVIGATION */
+
+#left_menu_navigation {
+	float: left;  
+	width: 160px;
+	padding: 12px 12px;
+	background: #26292e;
+}
+
+#left_menu_navigation ul li {
+	float: left;
+	height: 41px;
+}
+
+#left_menu_navigation ul li a {
+	display: inline-block;
+	color: #cbd9e7;
+	height: 29px;
+	width: 112px;
+	font-size: 12px;
+	padding: 12px 24px 0px 24px;
+	margin: 0px 0px 0px 0px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#left_menu_navigation ul li a:hover {
+	text-decoration: none;
+	background: url(../images/btn_primary_nav.gif) repeat-x;
+}
+
+#left_menu_navigation ul li.active a {
+	background: url(../images/btn_primary_nav.gif) repeat-x;
+}
+
+/* page content with a left menu (and without rows) */
+#left_menu_content {
+	float: right;  
+	width: 712px;
+	padding: 32px 32px;
+	background: #2f3338;
+}
+
+/* container for multiple rows with a left menu */
+#left_menu_rows{
+	float: right;  
+	width: 776px;
+	padding: 0px 0px;
+	background: #2f3338;
+}
+
+/* container for each row with a left menu */
+.left_menu_row{
+	float: right;
+	width: 712px;
+	padding: 32px 32px;	
+}
+
+.left_menu_row p {  
+	float: left; 
+	width: 712px; 
+}  
+   
+.left_menu_row p img{  
+	float: right;
+	width: 128px;
+}  
+
+/* normal text in the body of the page */
+.text{  
+	font-family: Helvetica, Arial;  
+	color: #bcc4c7;  
+ 	font-size: 14px;
+	line-height: 125%;
+	text-align: justify;
+}
+
+.text h2{  
+	font-size: 18px;  
+	margin: 0px 0px 12px 0px;  
+	color: #fff;  
+}  
+
+.text h3{  
+	font-size: 16px;  
+	margin: 32px 0px 16px 0px;  
+	color: #fff;  
+}
+
+.text p {
+	margin: 8px 0px 16px 0px;
+}
+
+.text form p{
+	margin: 0px 0px 22px;
+}
+
+.text td, th {
+	  padding: 6px;
+}
+
+.text ol {
+	padding: 0px 18px;
+	list-style-type: decimal;
+}
+
+.text ul {
+	padding: 0px 48px;
+	list-style-type: square;
+}
+
+.text li {
+	margin: 8px 0px 16px 0px;
+	line-height: 100%;
+}
+
+.text li strong {
+	margin: 4px 0px 16px 0px;
+	color: #fff;  
+}
+
+/* FORMS */
+
+input {
+	height: 17px;
+	padding: 7px 10px;
+	color: #a0a4a8;
+	border: none;
+	font-size: 14px;
+}
+
+input.narrow {
+	width: 171px;
+}
+
+input.wide {
+	width: 300px;
+}
+
+textarea {
+	height: 200px;
+	width: 876px;
+	padding: 7px 10px;
+	color: #a0a4a8;
+	border: none;
+	font-size: 14px;
+}
+
+/* form actions (e.g. submit, update, cancel, etc.) */
+
+#formactions {
+	width: 232;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* form update button */
+
+input#update{
+	width: 104px;
+	height: 32px;
+	margin: 0px 0px 0px 0px;
+	background: url(../images/btn_update.gif) no-repeat;
+	float: left;
+}
+
+/* form cancel button */
+
+a#cancel{
+	width: 104px;
+	height: 32px;
+	margin: 0px 0px 0px 0px;
+	background: url(../images/btn_cancel.gif) no-repeat;
+	text-indent: -9999px;
+	float: right;
+}
+
+
+
+/* SITE FOOTER AND SECONDARY NAVIGATION */
+
+#footer{  
+	width: 100%;  
+	float: left;  
+	clear: both;  
+	height: 120px;  
+	border-top: 1px solid #3c4249;  
+	background: #1e2329;
+	font-size: 16px;
+}  
+   
+#footer_content{  
+	margin: auto;  
+	width: 943px;  
+	padding: 46px 17px 0px 0px;  
+}  
+   
+#footer_content ul{  
+	float: right;  
+	margin: 0px 0px 5px 0px;  
+}  
+   
+#footer_content ul li{  
+	float: left;  
+	margin: 0px 0px 0px 12px;  
+	padding: 0px 0px 0px 12px;  
+	background: url(../images/header_navi_bg.gif) left center no-repeat;  
+}  
+   
+#footer_content ul li.no_bg{  
+	background: none;  
+}  
+   
+#footer_content ul li a{  
+	color:#fff;
+	text-decoration: none;
+}  
+   
+#footer_content p{  
+	float: right;  
+	clear: right;  
+	margin: 0px;  
+	font-size: 12px;  
+	color: #383d43;
+}	
+
+
+/* ERROR MESSAGES */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

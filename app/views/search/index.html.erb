@@ -1,0 +1,35 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<div id="page_title">
+	<p>Search Results</p>
+</div>
+
+<% if @posts.empty? %>
+
+	<div class="text row rows_odd">
+		<h2>No Results Found</h2>
+		<p>There are no results matching your search. Please try again.</p>
+	</div><!-- ends text row -->
+
+<% else %>
+
+	<% @posts.each do |post| %>
+
+		<div class="text row <%= cycle("rows_odd", "rows_even") %>">
+			<h2><%= post.title %></h2><p>
+
+				<!-- display image file for the post if one exists -->
+				<% if post.image_filename != nil %>
+					<% post_image_full_path = "/images/posts/" << post.image_filename %>
+					<%= image_tag(post_image_full_path, :alt => "") %>
+				<% end %>
+				
+				<%= post.content %></p>
+
+		</div><!-- ends text row -->
+
+	<% end %>
+<% end %>

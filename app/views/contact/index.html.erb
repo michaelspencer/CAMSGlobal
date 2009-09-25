@@ -1,0 +1,18 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<div id="page_title">
+	<p>Contact Us</p>
+</div>
+
+<div id="content_notopmargin">
+	<div class="text">
+
+<% @posts.each do |post| %>
+  <%= post.content %>
+<% end %>
+
+	</div> <!--ends text -->
+</div> <!-- ends content -->

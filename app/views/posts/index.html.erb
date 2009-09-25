@@ -1,0 +1,48 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<div id="page_title">
+	<p>Website Pages</p>
+</div>
+
+<div id="content_notopmargin">
+	<div class="text">
+
+		<div id="list_header_action">
+			
+			<%= link_to 'Create a new page', new_post_path %>
+		</div>
+		<table class="list">
+			<tr>
+    			<th class="list_header">Page Type</th>
+    			<th class="list_header">Page Title</th>
+  			</tr>
+
+			<% for post in @posts %>
+
+  			<tr class="text <%= cycle("rows_odd", "rows_even") %>">
+    			<td id="list_column_pagetype"><%=h post.pagetype %></td>
+    			<td id="list_column_pagetitle"><%=h post.title %></td>
+				<td id="list_column_actions">
+					<ul>
+    				<li class="no_bg"><%= link_to 'Show', post %></li>
+    				<li><%= link_to 'Edit', edit_post_path(post) %></li>
+    				<li><%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %></li>
+					</ul>
+
+<!-->    				
+					<td><%= link_to 'Show', post %></td>
+    				<td><%= link_to 'Edit', edit_post_path(post) %></td>
+    				<td><%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %></td>
+<-->
+
+
+				</td>
+  			</tr>
+			<% end %>
+		</table>
+
+	</div> <!--ends text -->
+</div> <!-- ends content -->

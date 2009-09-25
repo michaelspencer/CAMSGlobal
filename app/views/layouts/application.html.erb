@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta name="author" content="michaelhspencer@gmail.com (http://www.michaelhspencer/)" />
+	<meta name="keywords" content=" foo, foo1, foo2, foo3, foo4" />
+	<meta name="description" content="This is a description of this website" />
+
+	<title><%= yield :title %></title>
+
+	<link rel="stylesheet" href="/stylesheets/styles.css" type="text/css">
+
+    <!-- For MENUS in IE --> 
+	<!--[if lt IE 7]>
+	<script type="text/javascript" src="js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.dropdown.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<div id="header">
+			<ul>
+				<li class="no_bg"><%= link_to "home", home_path %></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/contact">contact</a></li>
+<!--				<li><%= link_to "admin", posts_path %></li> -->
+			</ul>
+		</div> <!-- ends header -->
+
+		<%= link_to "home", home_path, :id => "logo", :class => "replace", :title => "CAMSGlobal" %>
+
+<!--	<a href="/homenews" id="logo" title="CAMSGlobal" class="replace"><span>CAMSGlobal</span></a> -->
+
+<!-- BODY -->
+<%= yield  %>
+
+	</div> <!-- ends wrapper -->
+
+	<div id="footer">
+		<div id="footer_content">
+			<ul>
+				<li class="no_bg"><%= link_to "home", home_path %></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/contact">contact</a></li>
+<!--			<li><%= link_to "admin", posts_path %></li> -->
+			</ul>
+			<p> &copy; 2009 CAMSGlobal. All Rights Reserved</p>
+		</div> <!-- ends footer content -->
+	</div> <!-- ends footer -->
+
+</body>
+</html>

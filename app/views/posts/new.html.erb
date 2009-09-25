@@ -1,0 +1,72 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<div id="page_title">
+	<p>Create a new Website Page</p>
+</div>
+
+<div id="content">
+	<div class="text">
+		
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+  	<%= f.label :pagetype, "Page Type" %><br />
+  	<%= select( "post", "pagetype", { "Contact" => "contact", "Home-What" => "homewhat", "Home-Who" => "homewho", "Home-Where" => "homewhere", "News" => "news", "Project" => "project" }.sort) %>
+  </p>
+  <p>
+    <%= f.label :title, "Page Title"%><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content, "Page Content" %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :continent, "Project Continent" %><br />
+    <%= select( "post", "continent", { "Africa" => "africa", "Asia" => "asia", "Australia" => "australia", "Europe" => "europe", "Middle East" => "middleeast", "North America" => "northamerica", "South America" => "southamerica" }.sort, { :include_blank => true }) %>
+  </p>
+  <p>
+    <%= f.label :industry, "Project Industry" %><br />
+    <%= select( "post", "industry", 
+		{ 
+			"Operations" => "operations",
+			"Construction" => "construction",
+			"Health Services" => "health",
+			"Oil & Gas" => "oilgas",
+			"Telecommunications" => "telecommunications",
+			"Renewable Energy" => "renewableenergy",
+			"Agriculture" => "agriculture",
+			"Power Generation" => "powergeneration",
+			"Transportation" => "transportation",
+			"Automation" => "automation",			
+			"Airports" => "airports",			
+			"Infrastructure" => "infrastructure",
+			"Finance" => "finance",
+		}.sort, { :include_blank => true }) %>
+  </p>
+  <p>
+    <%= f.label :start_date, "Project Start Date"%><br />
+    <%= f.text_field :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date, "Project End Date / News Publish Date"%><br />
+    <%= f.text_field :end_date %>
+  </p>
+  <p>
+    <%= f.label :image_filename, "Page Image" %><br />
+    <%= f.text_field :image_filename %>
+  </p>
+  <p>
+	<div id="formactions">
+    	<%= f.submit "", {:id => "update"} %> 
+    	<%= link_to 'Cancel', posts_path, {:id => "cancel"} %>
+	</div>
+  </p>
+<% end %>
+
+	</div> <!--ends text -->
+</div> <!-- ends content -->

@@ -1,0 +1,22 @@
+<% content_for :title do %>CAMSGlobal<% end %>
+
+
+<!-- search form -->
+<%= render :partial => "shared/searchform" %> 
+
+<!-- banner image -->
+<img id="primary_navigation_image" src="/images/banner_whoweare.jpg" alt="" />
+
+<!-- primary navigation -->
+<%= render :partial => "shared/primarynav", :locals => { :active => "home" } %>
+
+<div id="content">
+	<div class="text">
+
+<% @posts.each do |post| %>
+  <%= post.content %>
+<% end %>
+
+	</div>
+</div> <!-- ends content -->
+
