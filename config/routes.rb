@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   map.homewhere '/whereweare', :controller => 'homewhere', :action => 'index'
   map.homeadvisors '/advisors', :controller => 'homeadvisors', :action => 'index'
   map.homepartners '/partners', :controller => 'homepartners', :action => 'index'
+  map.hometeam '/team', :controller => 'hometeam', :action => 'index'
   map.homenews '/news', :controller => 'homenews', :action => 'index'
 
   # Excluding Team page for now per instructions from George Jannou
